@@ -3,6 +3,7 @@
 import Link from "next/link"
 import React from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import Navbar from './navbar/page'
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
 
     <main className="flex flex-col items-center justify-between ">
 
-      <div className="flex  flex-col items-center justify-between text-4xl">
+      {/* <div className="flex  flex-col items-center justify-between text-4xl">
       <h1>
       APPLICATION
       </h1> 
@@ -18,8 +19,8 @@ export default function Home() {
       <div className="flex flex-row mt-6 gap-6">
       <Link href="/about" >About</Link>
       <Link href="/contact">Contact</Link>
-      </div>
-      <Card className="py-4">
+      </div> */}
+      {/* <Card className="py-4">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <p className="text-tiny uppercase font-bold">Docs Connecter</p>
         <small className="text-default-500">Development and Learning</small>
@@ -32,13 +33,13 @@ export default function Home() {
           width={270}
         />
       </CardBody>
-    </Card>
-    <div className='flex gap-3 flex-col'>
+    </Card> */}
+    {/* <div className='flex gap-3 flex-col'>
     <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
     <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
     <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
     <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
-</div>
+</div> */}
 
     </main>
     </section>

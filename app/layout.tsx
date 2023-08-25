@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body className={cn("dark",inter.className)}>
-      <Navbar/>
+      <Navbar />
 
         {children}
 
