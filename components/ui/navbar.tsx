@@ -10,8 +10,10 @@ import {
   IconSettings,
   IconLogout,
   IconSwitchHorizontal,
+  IconBulb
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantine/ds';
+import Link from "next/link"
 import { Z_FIXED } from 'zlib';
 
 const useStyles = createStyles((theme) => ({
@@ -99,8 +101,11 @@ export function NavbarMinimalColored() {
         <MantineLogo type="mark" inverted size={30} />
       </Center>
       <Navbar.Section grow mt={50}>
-        <Stack justify="center" spacing={0}>
-          {links}
+        <Stack className=' justify-center gap-6 items-center' spacing={0}>
+        <IconHome2/> 
+      <Link href='/about'>  <IconBulb/></Link>  
+        <Link href='/contact'> <IconUser/> </Link>  
+        <IconSettings/>
         </Stack>
       </Navbar.Section>
       <Navbar.Section>

@@ -3,12 +3,11 @@
 import Link from "next/link"
 import React from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
-import Navbar from './navbar/page'
 
 export default function Home() {
   return (
     <section>
-      <Navbar/>
+
     <main className="flex flex-col items-center justify-between ">
 
       <div className="flex  flex-col items-center justify-between text-4xl">
@@ -38,7 +37,7 @@ export default function Home() {
     <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
     <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
     <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
-    <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' /> */}
+    <Image src={'/Untitleddesign.png'} alt="blogpost" className=' w-[20rem]' />
 </div>
 
     </main>
