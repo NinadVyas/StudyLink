@@ -1,121 +1,80 @@
-import { useState } from 'react';
-import { Navbar, Center, Tooltip, UnstyledButton, createStyles, Stack, rem } from '@mantine/core';
-import {
-  IconHome2,
-  IconGauge,
-  IconDeviceDesktopAnalytics,
-  IconFingerprint,
-  IconCalendarStats,
-  IconUser,
-  IconSettings,
-  IconLogout,
-  IconSwitchHorizontal,
-  IconBulb
-} from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
+import React from "react";
+import {Navbar,NavbarMenuToggle,NavbarMenu,NavbarMenuItem, NavbarBrand, NavbarContent, NavbarItem, Button} from "@nextui-org/react";
+import {AcmeLogo} from "./AcmeLogo.jsx";
 import Link from "next/link"
-import { Z_FIXED } from 'zlib';
 
-const useStyles = createStyles((theme) => ({
-  link: {
-    width: rem(50),
-    height: rem(50),
-    borderRadius: theme.radius.md,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: theme.white,
-    opacity: 0.85,
+export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    '&:hover': {
-      opacity: 1,
-      backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background!,
-        0.1
-      ),
-    },
-  },
-
-  active: {
-    opacity: 1,
-    '&, &:hover': {
-      backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background!,
-        0.15
-      ),
-    },
-  },
-}));
-
-interface NavbarLinkProps {
-  icon: React.FC<any>;
-  label: string;
-  active?: boolean;
-  onClick?(): void;
-}
-
-function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
-  const { classes, cx } = useStyles();
-  return (
-    <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
-      <UnstyledButton onClick={onClick} className={cx(classes.link, { [classes.active]: active })}>
-        <Icon size="1.2rem" stroke={1.5} />
-      </UnstyledButton>
-    </Tooltip>
-  );
-}
-
-const mockdata = [
-  { icon: IconHome2, label: 'Home' },
-  { icon: IconGauge, label: 'Dashboard' },
-  { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
-  { icon: IconCalendarStats, label: 'Releases' },
-  { icon: IconUser, label: 'Account' },
-  { icon: IconFingerprint, label: 'Security' },
-  { icon: IconSettings, label: 'Settings' },
-];
-
-export function NavbarMinimalColored() {
-  const [active, setActive] = useState(2);
-
-  const links = mockdata.map((link, index) => (
-    <NavbarLink
-      {...link}
-      key={link.label}
-      active={index === active}
-      onClick={() => setActive(index)}
-    />
-  ));
+  const menuItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+  ];
 
   return (
-    <Navbar
-      height={750}
-      width={{ base: 80 }}
-      p="md"
-      sx={(theme) => ({
-        backgroundColor: theme.fn.variant({ variant: 'filled', color: theme.primaryColor })
-          .background,
-      })}
-    >
-      <Center>
-        <MantineLogo type="mark" inverted size={30} />
-      </Center>
-      <Navbar.Section grow mt={50}>
-        <Stack className=' justify-center gap-6 items-center' spacing={0}>
-        <IconHome2/> 
-      <Link href='/about'>  <IconBulb/></Link>  
-        <Link href='/contact'> <IconUser/> </Link>  
-        <IconSettings/>
-        </Stack>
-      </Navbar.Section>
-      <Navbar.Section>
-        <Stack justify="center" spacing={0}>
-          <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
-          <NavbarLink icon={IconLogout} label="Logout" />
-        </Stack>
-      </Navbar.Section>
+    <Navbar onMenuOpenChange={setIsMenuOpen} className='mt-4'>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
+          <AcmeLogo />
+          <p className="font-bold text-inherit">ACME</p>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link href='/home' color="foreground" >
+            Home
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link href="/about" aria-current="page">
+            About
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link href='/contact' color="foreground" >
+            Contact
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+              }
+              className="w-full"
+              href="#"
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </Navbar>
   );
 }
-
-export default NavbarMinimalColored

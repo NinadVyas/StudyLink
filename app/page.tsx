@@ -3,12 +3,12 @@
 import Link from "next/link"
 import React from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
-import Navbar from './navbar/page'
+
+
 
 export default function Home() {
   return (
     <section>
-
     <main className="flex flex-col items-center justify-between ">
 
       {/* <div className="flex  flex-col items-center justify-between text-4xl">
