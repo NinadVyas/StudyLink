@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <section>
     <main className="flex flex-col items-center justify-between ">
-
+˜
       {/* <div className="flex  flex-col items-center justify-between text-4xl">
       <h1>
       APPLICATION
