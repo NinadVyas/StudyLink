@@ -41,25 +41,6 @@ const Index = () => {
           </div>
         </div>
       </main>
-
-      {/* <div className={styles.about}>
-        <div className={styles.heading}>
-          <div>Why Ivy Wallet?</div>
-          <div>
-            Discover, explore and visualize data to maximize your growth.
-          </div>
-        </div>
-        <p></p>
-        <div className={styles.perks_container}>
-          {perks.map((e) => (
-            <div key={e.heading} className={styles.perk}>
-              <div>{e.icon}</div>
-              <div>{e.heading}</div>
-              <div>{e.paragraph}</div>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </Container>
   );
 }
