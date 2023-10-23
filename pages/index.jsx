@@ -1,6 +1,7 @@
 import { Container } from "../components/container";
 import { RightArrowIcon } from "../components/icons";
 import styles from "../styles/index.module.scss";
+import Link from "next/link";
 
 const Index = () => {
 
@@ -20,27 +21,23 @@ const Index = () => {
           Fueling your passion for knowledge and creativity with project-based learning and personalized course recommendations.
           </span>
           <div className={styles.heading_buttons}>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.ivy.wallet&hl=en&gl=US"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/resource"
             >
               <button>
                 Find Sources{" "}
                 <RightArrowIcon />
               </button>
-            </a>
+            </Link>
 
-            <a
-              href="https://play.google.com/store/apps/details?id=com.ivy.wallet&hl=en&gl=US"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/resource"
             >
               <button className={styles.buttonin}>
                 Find Sources{" "}
                 <RightArrowIcon />
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </main>
