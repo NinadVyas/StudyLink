@@ -38,7 +38,7 @@ const LinkElement = ({ title, src, external = false}) => {
 const LinksBar = () => {
   return(
     <nav className={styles.links}>
-      <LinkElement title="About" src="/resource" />
+      <LinkElement title="About" src="/about" />
       <LinkElement title="Sources" src="/resource" />
       <LinkElement title="Community" src="https://discord.gg/ZXEPNJrn" external />
       <LinkElement title="FAQ" src="/" />
@@ -91,7 +91,7 @@ const DropdownMenu = () => {
       </div>
       <ul ref={listRef} className={styles.menu}>
         <li>
-          <LinkElement title="About" src="/resource" />
+          <LinkElement title="About" src="/about" />
         </li>
         <li>
           <LinkElement title="Features" src="/resource" />
