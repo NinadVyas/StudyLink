@@ -40,6 +40,7 @@ const LinksBar = () => {
     <nav className={styles.links}>
       <LinkElement title="About" src="/about" />
       <LinkElement title="Sources" src="/resource" />
+      <LinkElement title="Course" src="/course" />
       <LinkElement title="Community" src="https://discord.gg/ZXEPNJrn" external />
       <LinkElement title="FAQ" src="/" />
     </nav>
