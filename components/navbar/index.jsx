@@ -8,7 +8,7 @@ const Logo = () => {
     <div className={styles.logo}>
       <div>
         <Link href="/">
-          <a>
+          <a className={styles.logo1}>
             {/*eslint-disable-next-line @next/next/no-img-element*/}
             <img src="./main.png" alt="Logo" width="60" height="60" />
           </a>
