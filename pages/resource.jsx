@@ -11,7 +11,52 @@ export default function Resource() {
         <div className={styles.heading}>
           <div>Documents</div>
           <div>
-          Explore, Learn, Create, Innovate 
+            Explore, Learn, Create, Innovate
+          </div>
+
+        </div>
+        <div className={styles.maincards}>
+          <div className={styles.card}>
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Card Image"
+              className={styles.cardImage}
+            />
+          </div>
+          <div className={styles.card}>
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Card Image"
+              className={styles.cardImage}
+            />
+          </div>
+          <div className={styles.card}>
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Card Image"
+              className={styles.cardImage}
+            />
+          </div>
+          <div className={styles.card}>
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Card Image"
+              className={styles.cardImage}
+            />
+          </div>
+          <div className={styles.card}>
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Card Image"
+              className={styles.cardImage}
+            />
+          </div>
+          <div className={styles.card}>
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Card Image"
+              className={styles.cardImage}
+            />
           </div>
         </div>
       </div>
