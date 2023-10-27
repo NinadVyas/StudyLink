@@ -1,7 +1,10 @@
+"use client"
+
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { useOutside } from "../../utils/useOutside"
+import { UserButton, auth } from '@clerk/nextjs';
 
 const Logo = () => {
   return(
@@ -47,10 +50,37 @@ const LinksBar = () => {
   )
 }
 
-const ActionButtons = () => { 
+const ActionButtons = async ({ username }) => { 
+  const { userId } = auth();
   return(
     <div className={styles.cta}>
+      {!userId && (
+          <>
+            <Link
+              href='sign-in'
+              className='text-gray-300 hover:text-white mr-4'
+            >
+              Sign In
+            </Link>
+            <Link
+              href='sign-up'
+              className='text-gray-300 hover:text-white mr-4'
+            >
+              Sign Up
+            </Link>
+          </>
+        )}
+        {userId && (
+          <Link href='profile' className='text-gray-300 hover:text-white mr-4'>
+            Profile
+          </Link>
+        )}
+        <div className='ml-auto'>
+          <UserButton afterSignOutUrl='/' />
+        </div>
+      <button>SignIn</button>
       <button>SignUp</button>
+
     </div>
   )
 }
