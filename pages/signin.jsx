@@ -1,10 +1,20 @@
-import { SignIn } from '@clerk/nextjs';
+import React from 'react'
+import { Container } from "../components/container";
+import styles from "../styles/index.module.scss";
 
-const SignInPage = () => {
+function signin() {
   return (
-    <>
-      <SignIn />
-    </>
-  );
-};
-export default SignInPage;
+    <Container title="Resource">
+    <div className={styles.about}>
+      <div className={styles.heading}>
+        <div>
+          Sign IN
+        </div>
+      </div>
+    </div>
+  </Container>
+  )
+}
+
+export default signin
+

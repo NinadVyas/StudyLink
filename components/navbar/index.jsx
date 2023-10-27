@@ -1,10 +1,7 @@
-"use client"
-
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { useOutside } from "../../utils/useOutside"
-import { UserButton, auth } from '@clerk/nextjs';
 
 const Logo = () => {
   return(
@@ -46,41 +43,17 @@ const LinksBar = () => {
       <LinkElement title="Course" src="/course" />
       <LinkElement title="Community" src="https://discord.gg/ZXEPNJrn" external />
       <LinkElement title="FAQ" src="/" />
+      <LinkElement title="SignIn" src="/signin" />
+
     </nav>
   )
 }
 
-const ActionButtons = async ({ username }) => { 
-  const { userId } = auth();
+const ActionButtons = () => { 
   return(
     <div className={styles.cta}>
-      {!userId && (
-          <>
-            <Link
-              href='sign-in'
-              className='text-gray-300 hover:text-white mr-4'
-            >
-              Sign In
-            </Link>
-            <Link
-              href='sign-up'
-              className='text-gray-300 hover:text-white mr-4'
-            >
-              Sign Up
-            </Link>
-          </>
-        )}
-        {userId && (
-          <Link href='profile' className='text-gray-300 hover:text-white mr-4'>
-            Profile
-          </Link>
-        )}
-        <div className='ml-auto'>
-          <UserButton afterSignOutUrl='/' />
-        </div>
       <button>SignIn</button>
       <button>SignUp</button>
-
     </div>
   )
 }
@@ -132,6 +105,9 @@ const DropdownMenu = () => {
         </li>
         <li>
           <LinkElement title="FAQ" src="/" />
+        </li>
+        <li>
+        <LinkElement title="SignIn" src="/signin" />
         </li>
       </ul>
     </div>
