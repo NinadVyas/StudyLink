@@ -1,62 +1,73 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
-import { useOutside } from "../../utils/useOutside"
+import { useOutside } from "../../utils/useOutside";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 const Logo = () => {
-  return(
+  return (
     <div className={styles.logo}>
       <div>
         <Link href="/">
-          <a className={styles.logo1}>
             {/*eslint-disable-next-line @next/next/no-img-element*/}
             <img src="./main.png" alt="Logo" width="60" height="60" />
-          </a>
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-const LinkElement = ({ title, src, external = false}) => {
+const CustomLink = ({ children, href, external = false }) => {
   if (external) {
-    return(
-      <a href={src} target="_blank" rel="noreferrer"> 
-        {title}<i className="ri-external-link-line" />
+    return (
+      <a href={href} target="_blank" rel="noreferrer">
+        {children}
       </a>
-    )
+    );
   }
 
-  return(
-    <Link href={src}>
-      <a>{title}</a>
-    </Link>
-  )
-
-}
+  return <Link href={href}>{children}</Link>;
+};
 
 const LinksBar = () => {
-  return(
+  return (
     <nav className={styles.links}>
-      <LinkElement title="About" src="/about" />
-      <LinkElement title="Sources" src="/resource" />
-      <LinkElement title="Course" src="/course" />
-      <LinkElement title="Community" src="https://discord.gg/ZXEPNJrn" external />
-      <LinkElement title="FAQ" src="/" />
-      <LinkElement title="SignIn" src="/signin" />
-
+      <CustomLink href="/about">About</CustomLink>
+      <CustomLink href="/resource">Sources</CustomLink>
+      <CustomLink href="/course">Course</CustomLink>
+      <CustomLink href="https://discord.gg/ZXEPNJrn" external>
+        Community
+      </CustomLink>
+      <CustomLink href="/">FAQ</CustomLink>
+      
     </nav>
-  )
-}
+  );
+};
 
-const ActionButtons = () => { 
-  return(
+const ActionButtons = () => {
+  return (
     <div className={styles.cta}>
-      <button>SignIn</button>
-      <button>SignUp</button>
+      <SignedIn>
+        {/* Mount the UserButton component */}
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        {/* Signed out users get sign in button */}
+        <SignInButton />
+      </SignedOut>
+      {/* <button>SignIn</button>
+      <button>SignUp</button> */}
     </div>
-  )
-}
+  );
+};
 
 const DropdownMenu = () => {
   const elementRef = useRef();
@@ -64,14 +75,13 @@ const DropdownMenu = () => {
   const listRef = useRef();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = ({onlyClose = false}) => {
+  const toggleMenu = ({ onlyClose = false }) => {
     if (!onlyClose) {
       setMenuOpen(!menuOpen);
     } else {
       setMenuOpen(false);
     }
-
-  }
+  };
 
   useEffect(() => {
     const buttonNode = buttonRef.current;
@@ -84,43 +94,55 @@ const DropdownMenu = () => {
       buttonNode.classList.remove(styles.active_select);
       listNode.classList.remove(styles.menu_open);
     }
-  }, [menuOpen])
+  }, [menuOpen]);
 
-  useOutside(elementRef, () => toggleMenu({onlyClose: true}));
+  useOutside(elementRef, () => toggleMenu({ onlyClose: true }));
 
-  return(
+  return (
     <div ref={elementRef} className={styles.dropdown}>
+      <div  className="gap-4 flex">
+        <div>
+      <SignedIn>
+        {/* Mount the UserButton component */}
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        {/* Signed out users get sign in button */}
+        <SignInButton />
+      </SignedOut>
+      </div>
       <div onClick={toggleMenu}>
-        <button ref={buttonRef} className={styles.select}>Menu</button>
+        <button ref={buttonRef} className={styles.select}>
+          Menu
+        </button>
+        </div>
       </div>
       <ul ref={listRef} className={styles.menu}>
         <li>
-          <LinkElement title="About" src="/about" />
+          <CustomLink href="/about">About</CustomLink>
         </li>
         <li>
-          <LinkElement title="Features" src="/resource" />
+          <CustomLink href="/resource">Features</CustomLink>
         </li>
         <li>
-          <LinkElement title="Community" src="https://t.me/+etavgioavwg4nthk" external />
+          <CustomLink href="https://t.me/+etavgioavwg4nthk" external>
+            Community
+          </CustomLink>
         </li>
         <li>
-          <LinkElement title="FAQ" src="/" />
-        </li>
-        <li>
-        <LinkElement title="SignIn" src="/signin" />
+          <CustomLink href="/">FAQ</CustomLink>
         </li>
       </ul>
     </div>
-  )
-}
-
+  );
+};
 export const Navbar = () => {
-  return(
-      <header className={styles.container}>
-        <Logo />
-        <LinksBar />
-        <ActionButtons />
-        <DropdownMenu />
-      </header>
-  )
+  return (
+    <header className={styles.container}>
+      <Logo />
+      <LinksBar />
+      <ActionButtons />
+      <DropdownMenu />
+    </header>
+  );
 };

@@ -1,5 +1,5 @@
 {
-  "name": "studylink",
+  "name": "studyone",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,19 +11,20 @@
   "dependencies": {
     "@clerk/nextjs": "^4.26.1",
     "@clerk/themes": "^1.7.9",
-    "autoprefixer": "^10.4.16",
-    "next": "^12.3.4",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-markdown": "^8.0.4",
-    "recharts": "^2.1.12",
-    "remark-gfm": "^3.0.1",
-    "remixicon": "^2.5.0",
-    "sass": "^1.53.0"
+    "next": "14.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^9.0.0",
+    "recharts": "^2.9.0",
+    "remark-gfm": "^4.0.0",
+    "remixicon": "^3.5.0",
+    "sass": "^1.69.5"
   },
   "devDependencies": {
-    "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6",
-    "intercept-stdout": "^0.1.2"
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3"
   }
 }
