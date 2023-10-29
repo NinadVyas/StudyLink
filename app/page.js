@@ -20,7 +20,7 @@ const Index = () => {
           <span>
           Fueling your passion for knowledge and creativity with project-based learning and personalized course recommendations.
           </span>
-          <div className={styles.heading_buttons}>
+          {/* <div className={styles.heading_buttons}>
             <Link
               href="/resource"
             >
@@ -38,7 +38,7 @@ const Index = () => {
                 <RightArrowIcon />
               </button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </main>
     </Container>
