@@ -37,27 +37,6 @@ export default function Resource() {
               className={styles.cardImage}
             />
           </div>
-          <div className={styles.card}>
-            <img
-              src="https://via.placeholder.com/300x200"
-              alt="Card Image"
-              className={styles.cardImage}
-            />
-          </div>
-          <div className={styles.card}>
-            <img
-              src="https://via.placeholder.com/300x200"
-              alt="Card Image"
-              className={styles.cardImage}
-            />
-          </div>
-          <div className={styles.card}>
-            <img
-              src="https://via.placeholder.com/300x200"
-              alt="Card Image"
-              className={styles.cardImage}
-            />
-          </div>
         </div>
       </div>
     </Container>
