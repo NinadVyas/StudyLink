@@ -4,21 +4,15 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { useOutside } from "../../utils/useOutside";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut, SignInButton,SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 
 const Logo = () => {
   return (
     <div className={styles.logo}>
       <div>
         <Link href="/">
-            {/*eslint-disable-next-line @next/next/no-img-element*/}
-            <img src="./main.png" alt="Logo" width="60" height="60" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="./main.png" alt="Logo" width="60" height="60" />
         </Link>
       </div>
     </div>
@@ -47,7 +41,9 @@ const LinksBar = () => {
         Community
       </CustomLink>
       <CustomLink href="/">FAQ</CustomLink>
-      
+      <SignedIn>
+        <CustomLink href="/dashboard">Dashboard</CustomLink>
+      </SignedIn>
     </nav>
   );
 };
@@ -63,8 +59,6 @@ const ActionButtons = () => {
         {/* Signed out users get sign in button */}
         <SignInButton />
       </SignedOut>
-      {/* <button>SignIn</button>
-      <button>SignUp</button> */}
     </div>
   );
 };
@@ -100,21 +94,21 @@ const DropdownMenu = () => {
 
   return (
     <div ref={elementRef} className={styles.dropdown}>
-      <div  className="gap-4 flex">
+      <div className="gap-4 flex">
         <div>
-      <SignedIn>
-        {/* Mount the UserButton component */}
-        <UserButton />
-      </SignedIn>
-      <SignedOut>
-        {/* Signed out users get sign in button */}
-        <SignInButton />
-      </SignedOut>
-      </div>
-      <div onClick={toggleMenu}>
-        <button ref={buttonRef} className={styles.select}>
-          Menu
-        </button>
+          <SignedIn>
+            {/* Mount the UserButton component */}
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            {/* Signed out users get sign in button */}
+            <SignInButton />
+          </SignedOut>
+        </div>
+        <div onClick={toggleMenu}>
+          <button ref={buttonRef} className={styles.select}>
+            Menu
+          </button>
         </div>
       </div>
       <ul ref={listRef} className={styles.menu}>
@@ -132,10 +126,16 @@ const DropdownMenu = () => {
         <li>
           <CustomLink href="/">FAQ</CustomLink>
         </li>
+        <SignedIn>
+          <li>
+            <CustomLink href="/dashboard">Dashboard</CustomLink>
+          </li>
+        </SignedIn>
       </ul>
     </div>
   );
 };
+
 export const Navbar = () => {
   return (
     <header className={styles.container}>
