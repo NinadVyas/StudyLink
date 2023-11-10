@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { useOutside } from "../../utils/useOutside";
-import { ClerkProvider, SignedIn, SignedOut, SignInButton,SignOutButton, UserButton, useUser } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 
 const Logo = () => {
   return (
@@ -35,13 +35,14 @@ const LinksBar = () => {
   return (
     <nav className={styles.links}>
       <CustomLink href="/about">About</CustomLink>
-      <CustomLink href="/resource">Sources</CustomLink>
-      <CustomLink href="/course">Course</CustomLink>
+
       <CustomLink href="https://discord.gg/ZXEPNJrn" external>
         Community
       </CustomLink>
       <CustomLink href="/">FAQ</CustomLink>
       <SignedIn>
+        <CustomLink href="/resource">Sources</CustomLink>
+        <CustomLink href="/course">Course</CustomLink>
         <CustomLink href="/dashboard">Dashboard</CustomLink>
       </SignedIn>
     </nav>
@@ -127,6 +128,12 @@ const DropdownMenu = () => {
           <CustomLink href="/">FAQ</CustomLink>
         </li>
         <SignedIn>
+          <li>
+            <CustomLink href="/resource">Sources</CustomLink>
+          </li>
+          <li>
+            <CustomLink href="/course">Course</CustomLink>
+          </li>
           <li>
             <CustomLink href="/dashboard">Dashboard</CustomLink>
           </li>
