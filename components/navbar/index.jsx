@@ -39,7 +39,7 @@ const LinksBar = () => {
       <CustomLink href="https://discord.gg/ZXEPNJrn" external>
         Community
       </CustomLink>
-      <CustomLink href="/">FAQ</CustomLink>
+      <CustomLink href="/fq">FAQ</CustomLink>
       <SignedIn>
         <CustomLink href="/resource">Sources</CustomLink>
         <CustomLink href="/course">Course</CustomLink>
