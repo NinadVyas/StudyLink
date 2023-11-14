@@ -9,17 +9,25 @@
   margin-top: 2rem;
 }
 
+.tabledsa{
+  background-color:transparent;
+
+}
+.tabledsarow{
+  color: #fff;
+  
+}
 .card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #ffffff;
   width: 400px;
   height: 400px;
   margin: 16px;
   display: inline-block;
+  cursor: pointer;
   transition: transform 0.2s ease-in-out;
-
   &:hover {
     transform: translateY(-5px);
   }

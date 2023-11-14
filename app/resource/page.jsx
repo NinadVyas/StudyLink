@@ -1,6 +1,7 @@
 import { Container } from "/components/container";
 import { LockIcon, UsersIcon, ChartIcon, WalletIcon } from "/components/icons";
 import styles from "/styles/index.module.scss";
+import Link from "next/link";
 
 export default function Resource() {
 
@@ -16,23 +17,25 @@ export default function Resource() {
 
         </div>
         <div className={styles.maincards}>
+          <Link href='/dsa'>
           <div className={styles.card}>
             <img
-              src="https://via.placeholder.com/300x200"
+              src="/dsa.png"
+              alt="Card Image"
+              className={styles.cardImage}
+            />
+          </div>
+          </Link>
+          <div className={styles.card}>
+            <img
+              src="os.png"
               alt="Card Image"
               className={styles.cardImage}
             />
           </div>
           <div className={styles.card}>
             <img
-              src="https://via.placeholder.com/300x200"
-              alt="Card Image"
-              className={styles.cardImage}
-            />
-          </div>
-          <div className={styles.card}>
-            <img
-              src="https://via.placeholder.com/300x200"
+              src="cn.png"
               alt="Card Image"
               className={styles.cardImage}
             />
