@@ -2,7 +2,7 @@
 import { Container } from "/components/container";
 import styles from "/styles/index.module.scss";
 import * as React from 'react';
-import Box from '@mui/material/Box';
+import Box from '@mui/joy/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
@@ -175,22 +175,23 @@ const [open, setOpen] = React.useState(false);
       >
       </TabList>
       <TabPanel value={0}>
-      <Card variant="outlined" sx={{ width: 320 }}>
-      <CardOverflow>
-        <AspectRatio ratio="2">
-          <img
-            src="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318"
-            srcSet="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318&dpr=2 2x"
-            loading="lazy"
-            alt=""
-          />
-        </AspectRatio>
-      </CardOverflow>
-      <CardContent>
-       <a href=''> <Typography level="title-md">Dsa Imp By Ninad Vyas</Typography></a>
-        <Typography level="body-sm">India</Typography>
-      </CardContent>
-    </Card>
+      <Box
+      sx={{
+        width: '100%',
+        maxWidth: 500,
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+        gap: 2,
+      }}
+    >
+      <Card variant="outlined">
+        <CardContent>
+          <Typography level="title-md">Arrays</Typography>
+          <Typography>All about arrays with ex.</Typography>
+        </CardContent>
+      </Card>
+      
+    </Box>
       </TabPanel>
       <TabPanel value={1}>
         <List

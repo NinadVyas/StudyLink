@@ -17,79 +17,79 @@
   color: #fff;
   
 }
-.card {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  width: 400px;
-  height: 400px;
-  margin: 16px;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  &:hover {
-    transform: translateY(-5px);
-  }
+// .card {
+//   border: 1px solid #e0e0e0;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   background-color: #ffffff;
+//   width: 400px;
+//   height: 400px;
+//   margin: 16px;
+//   display: inline-block;
+//   cursor: pointer;
+//   transition: transform 0.2s ease-in-out;
+//   &:hover {
+//     transform: translateY(-5px);
+//   }
 
-  .cardImage {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-  }
+//   .cardImage {
+//     width: 100%;
+//     height: 200px;
+//     object-fit: cover;
+//     border-radius: 8px 8px 0 0;
+//   }
 
 
-  .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+//   .title {
+//     font-size: 1.5rem;
+//     font-weight: bold;
+//   }
 
-  .centeredText {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center text horizontally */
-  }
+//   .centeredText {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center; /* Center text horizontally */
+//   }
 
-  .description {
-    font-size: 1rem;
-    color: #555;
-    text-align: center; /* Center text horizontally */
-  }
+//   .description {
+//     font-size: 1rem;
+//     color: #555;
+//     text-align: center; /* Center text horizontally */
+//   }
 
-  .buttons {
-    display: flex;
-    justify-content: space-between;
+//   .buttons {
+//     display: flex;
+//     justify-content: space-between;
 
-    .buttonPrimary {
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
+//     .buttonPrimary {
+//       background-color: #007BFF;
+//       color: #fff;
+//       border: none;
+//       padding: 10px 20px;
+//       border-radius: 4px;
+//       cursor: pointer;
+//       transition: background-color 0.3s ease-in-out;
 
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
+//       &:hover {
+//         background-color: #0056b3;
+//       }
+//     }
 
-    .buttonSecondary {
-      background-color: #ccc;
-      color: #333;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
+//     .buttonSecondary {
+//       background-color: #ccc;
+//       color: #333;
+//       border: none;
+//       padding: 10px 20px;
+//       border-radius: 4px;
+//       cursor: pointer;
+//       transition: background-color 0.3s ease-in-out;
 
-      &:hover {
-        background-color: #999;
-      }
-    }
-  }
-}
+//       &:hover {
+//         background-color: #999;
+//       }
+//     }
+//   }
+// }
 
 
 .main {

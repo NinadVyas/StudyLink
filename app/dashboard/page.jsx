@@ -13,13 +13,6 @@ export default function Dashboard() {
             Main Dashboard
           </div>
           <div className={styles.maincards}>
-          <div className={styles.card}>
-            <img
-              src="https://via.placeholder.com/300x200"
-              alt="Card Image"
-              className={styles.cardImage}
-            />
-          </div>
         </div>
         </div>
       </div>
