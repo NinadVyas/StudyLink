@@ -16,18 +16,18 @@ export default function Resource() {
       paragraph:
         "Regular updates and content curation to ensure that the projects and course recommendations remain relevant and up-to-date with the latest trends and developments.",
     },
-    {
-      icon: <ChartIcon />,
-      heading: "Resource Downloads",
-      paragraph:
-        "Providing downloadable resources, such as PDFs, templates, or project files, for easy access and offline use.",
-    },
-    {
-      icon: <WalletIcon />,
-      heading: "Feedback System",
-      paragraph:
-        "A feedback system for users to provide input on the quality and usefulness of projects and courses, allowing for continuous improvement.",
-    },
+    // {
+    //   icon: <ChartIcon />,
+    //   heading: "Resource Downloads",
+    //   paragraph:
+    //     "Providing downloadable resources, such as PDFs, templates, or project files, for easy access and offline use.",
+    // },
+    // {
+    //   icon: <WalletIcon />,
+    //   heading: "Feedback System",
+    //   paragraph:
+    //     "A feedback system for users to provide input on the quality and usefulness of projects and courses, allowing for continuous improvement.",
+    // },
   ];
 
   return (
