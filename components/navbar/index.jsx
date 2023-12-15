@@ -36,7 +36,7 @@ const LinksBar = () => {
     <nav className={styles.links}>
       <CustomLink href="/about">About</CustomLink>
 
-      <CustomLink href="https://discord.gg/ZXEPNJrn" external>
+      <CustomLink href="/community">
         Community
       </CustomLink>
       <CustomLink href="/fq">FAQ</CustomLink>
