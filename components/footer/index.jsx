@@ -1,5 +1,7 @@
 import styles from './footer.module.scss'
 import Link from 'next/link'
+import {Avatar, AvatarGroup, AvatarIcon} from "@nextui-org/avatar";
+import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 
 const Sections = () => (
   <div className={styles.list_container}>
@@ -73,6 +75,7 @@ const Copyright = () => (
 
 export const Footer = () => {
   return (
+    
     <footer className={styles.footer}>
       <Sections />
       <Copyright />
