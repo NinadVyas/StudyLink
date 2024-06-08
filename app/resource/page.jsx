@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "/components/container";
 import styles from "/styles/index.module.scss";
 
@@ -81,7 +82,7 @@ const callouts = [
             {callouts.map((callout) => (
               <div key={callout.name} className="group relative py-2">
                 <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                  <img
+                  <Image
                     src={callout.imageSrc}
                     alt={callout.imageAlt}
                     className="h-full w-full object-cover object-center"
