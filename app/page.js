@@ -9,14 +9,12 @@ const Index = () => {
     <Container>
       <main className={styles.main}>
         <div className={styles.product}>
-          <div className={styles.news}>
-            <a href="https://t.me/+xGtegoUA50dkN2Fl" target="_blank" rel="noreferrer">
-
-              Join our telegram communinty for updates
-              <RightArrowIcon />
-            </a>
-          </div>
-          <h1>Your Source for Learning And Building Skills! ⚡</h1>
+        <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div className=" cursor-wait relative rounded-full flex border border-sky-500 px-3 py-1 text-sm leading-6 text-gray-300">
+          Want to share your Notes <Link href="https://github.com/ninadvyas/better-bridges" className="font-semibold flex ml-2 text-yellow-500">Click Here ➤</Link>
+        </div>
+      </div>
+          <h1>Your Source for Learning And Building Skills!</h1>
           <span>
           Fueling your passion for knowledge and creativity with project-based learning and personalized course recommendations.
           </span>

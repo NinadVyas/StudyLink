@@ -7,14 +7,9 @@ export default function Course() {
 
   return (
     <Container title="Resource">
-      <div className={styles.about}>
         <div className={styles.heading}>
           <div>FAQ</div>
-          <div>
-            Explore, Learn, Create, Innovate
-          </div>
         </div>
-      </div>
     </Container>
   );
 }

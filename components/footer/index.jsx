@@ -1,7 +1,5 @@
 import styles from './footer.module.scss'
 import Link from 'next/link'
-import {Avatar, AvatarGroup, AvatarIcon} from "@nextui-org/avatar";
-import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 
 const Sections = () => (
   <div className={styles.list_container}>
@@ -69,7 +67,7 @@ const Copyright = () => (
         <i className="ri-twitter-fill"></i>
       </a>
     </div>
-    Copyright &copy; {new Date().getFullYear()} Study Link
+    Copyright   &copy; {new Date().getFullYear()} Study Link
   </div>
 )
 
@@ -77,7 +75,7 @@ export const Footer = () => {
   return (
     
     <footer className={styles.footer}>
-      <Sections />
+      {/* <Sections /> */}
       <Copyright />
     </footer>
   )

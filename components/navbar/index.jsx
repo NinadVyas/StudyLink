@@ -35,16 +35,15 @@ const LinksBar = () => {
   return (
     <nav className={styles.links}>
       <CustomLink href="/about">About</CustomLink>
-
-      <CustomLink href="/community">
+      <SignedIn>
+      <CustomLink href="/resource">Resources</CustomLink>
+      <CustomLink href="/project">Project</CustomLink>
+        {/* <CustomLink href="/course">Course</CustomLink>
+        <CustomLink href="/dashboard">Dashboard</CustomLink> */}
+      </SignedIn>
+      <CustomLink href="https://discord.gg/HkEPnebX">
         Community
       </CustomLink>
-      <CustomLink href="/fq">FAQ</CustomLink>
-      <SignedIn>
-        <CustomLink href="/resource">Sources</CustomLink>
-        <CustomLink href="/course">Course</CustomLink>
-        <CustomLink href="/dashboard">Dashboard</CustomLink>
-      </SignedIn>
     </nav>
   );
 };
@@ -116,28 +115,25 @@ const DropdownMenu = () => {
         <li>
           <CustomLink href="/about">About</CustomLink>
         </li>
-        <li>
-          <CustomLink href="/resource">Features</CustomLink>
-        </li>
-        <li>
-          <CustomLink href="https://t.me/+etavgioavwg4nthk" external>
-            Community
-          </CustomLink>
-        </li>
-        <li>
-          <CustomLink href="/">FAQ</CustomLink>
-        </li>
         <SignedIn>
           <li>
-            <CustomLink href="/resource">Sources</CustomLink>
+            <CustomLink href="/resource">Resources</CustomLink>
           </li>
           <li>
+          <CustomLink href="/project">Project</CustomLink>
+        </li>
+          {/* <li>
             <CustomLink href="/course">Course</CustomLink>
           </li>
           <li>
             <CustomLink href="/dashboard">Dashboard</CustomLink>
-          </li>
+          </li> */}
         </SignedIn>
+        <li>
+          <CustomLink href="https://discord.gg/HkEPnebX" external>
+            Community
+          </CustomLink>
+        </li>
       </ul>
     </div>
   );
