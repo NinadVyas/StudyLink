@@ -38,8 +38,7 @@ const LinksBar = () => {
       <SignedIn>
       <CustomLink href="/resource">Resources</CustomLink>
       <CustomLink href="/project">Project</CustomLink>
-        {/* <CustomLink href="/course">Course</CustomLink>
-        <CustomLink href="/dashboard">Dashboard</CustomLink> */}
+      {/* <CustomLink href="/playground">Playground</CustomLink> */}
       </SignedIn>
       <CustomLink href="https://discord.gg/HkEPnebX">
         Community
@@ -122,12 +121,9 @@ const DropdownMenu = () => {
           <li>
           <CustomLink href="/project">Project</CustomLink>
         </li>
-          {/* <li>
-            <CustomLink href="/course">Course</CustomLink>
-          </li>
-          <li>
-            <CustomLink href="/dashboard">Dashboard</CustomLink>
-          </li> */}
+        {/* <li>
+          <CustomLink href="/playground">Playground</CustomLink>
+        </li> */}
         </SignedIn>
         <li>
           <CustomLink href="https://discord.gg/HkEPnebX" external>

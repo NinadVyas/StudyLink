@@ -1,82 +1,27 @@
-import styles from './footer.module.scss'
 import Link from 'next/link'
-
-const Sections = () => (
-  <div className={styles.list_container}>
-    <div className={styles.container_sublist}>
-      <div className={styles.list_item}>
-        <div>
-          <h3>Product</h3>
-          <Link href="/features">Features</Link>
-          <a href="https://github.com/ninadvyas">
-            Roadmap
-          </a>
-          <a href="https://github.com/ninadvyas">
-            Philosophy
-          </a>
-          <a>Journey</a>
-          <a href="https://github.com/ninadvyas">
-            Error Reporting
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.list_item}>
-        <div>
-          <h3>About</h3>
-          <a>Why Study Link?</a>
-          <a>Blog</a>
-          <Link href="/terms-and-conditions">Terms of use</Link>
-          <Link href="/privacy">Privacy policy</Link>
-        </div>
-      </div>
-    </div>
-
-    <div className={styles.container_sublist}>
-      <div className={styles.list_item}>
-        <div>
-          <h3>Company</h3>
-          <a href="https://github.com/ninadvyas">About</a>
-          <a href="https://github.com/ninadvyas">Updates</a>
-          <a href="https://github.com/ninadvyas">Sponsors</a>
-        </div>
-      </div>
-
-      <div className={styles.list_item}>
-        <div>
-          <h3>Support</h3>
-          <a href="https://github.com/ninadvyas">Github</a>
-          <a>FAQs</a>
-          <a href="https://discord.gg/ZXEPNJrn">Community</a>
-        </div>
-      </div>
-    </div>
-  </div>
-)
-
-const Copyright = () => (
-  <div className={styles.copyright}>
-    <div>
-      <a href="https://github.com/ninadvyas">
-        <i className="ri-github-fill"></i>
-      </a>
-      <a href="https://www.instagram.com/ninadvsd/">
-        <i className="ri-instagram-fill"></i>
-      </a>
-      <a href='https://twitter.com/ninadvsd'>
-        <i className="ri-twitter-fill"></i>
-      </a>
-    </div>
-    Copyright   &copy; {new Date().getFullYear()} Study Link
-  </div>
-)
+import Image from "next/image"
 
 export const Footer = () => {
   return (
-    
-    <footer className={styles.footer}>
-      {/* <Sections /> */}
-      <Copyright />
-    </footer>
+    <div className="relative isolate overflow-hidden  px-6 py-16 lg:px-8">
+    <div className="absolute inset-0 -z-10 opacity-20" />
+    <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg]shadow-xl sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
+    <div className="mx-auto max-w-2xl lg:max-w-4xl">
+      <Image className="mx-auto h-12" width='50' height='20' src="/main.png" alt="mainone" />
+      <figure className="mt-10">
+          <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+           <a href='https://www.github.com/ninadvyas' > <div className=" text-white hover:text-sky-500">Github</div></a>
+            <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-white">
+              <circle cx={1} cy={1} r={1} />
+            </svg>
+           <a href='https://www.linkedin.com/in/ninadvyas' > <div className="hover:text-sky-500 text-white">LinkedIn</div></a>
+            <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-white">
+              <circle cx={1} cy={1} r={1} />
+            </svg>
+           <a href='https://www.twitter.com/ninadvsd'> <div className="hover:text-sky-500 text-white">Twitter</div></a>
+          </div>
+      </figure>
+    </div>
+  </div>
   )
 }
