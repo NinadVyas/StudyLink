@@ -8,12 +8,7 @@ export default function Dashboard() {
     <Container title="Resource">
       <div className={styles.about}>
         <div className={styles.heading}>
-          <div>Dashboard</div>
-          <div>
-            Main Dashboard
-          </div>
-          <div className={styles.maincards}>
-        </div>
+          <div>Projects</div>
         </div>
       </div>
     </Container>
